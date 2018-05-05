@@ -1,0 +1,7 @@
+language: go
+go:
+  - 1.10.2
+before_install:
+  - go get -t -v ./...
+script:
+  - go test -v --race ./...
