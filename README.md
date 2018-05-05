@@ -4,7 +4,7 @@
 
 # mdopen
 
-Allows to view markdown files in the default browser. For more details, see the API documentation.
+Allows to view markdown files in the default browser. For more details, see the API [documentation](https://godoc.org/gopkg.in/romanyx/mdopen.v1).
 
 ![Example](https://monosnap.com/image/SBwy1rhdJagvMBeCNvOwLa5Q0Ae4yB.png)
 

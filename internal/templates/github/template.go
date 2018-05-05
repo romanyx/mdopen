@@ -1,6 +1,7 @@
 package github
 
 const (
+	// Template holds html layout for markdown content.
 	Template = `
 	<html>
 		<head>
