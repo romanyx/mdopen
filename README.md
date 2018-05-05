@@ -6,8 +6,6 @@
 
 Allows to view markdown files in the default browser. For more details, see the API [documentation](https://godoc.org/gopkg.in/romanyx/mdopen.v1).
 
-![Example](https://monosnap.com/image/OHjuc7WrtgIrfSdm0QFDZTreANy72v.png)
-
 ## CLI usage
 
 Install:
@@ -27,6 +25,10 @@ View it in the default browser as html:
 ```bash
 mdopen hello.md
 ```
+
+You will see:
+
+![Example](https://monosnap.com/image/1erjc9khEuyB3fHSr1qQaJE5BYhzPC.png)
 
 ## API usage
 
