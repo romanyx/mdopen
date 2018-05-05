@@ -8,7 +8,7 @@ Allows to view markdown files in the default browser. For more details, see the 
 
 ![Example](https://monosnap.com/image/SBwy1rhdJagvMBeCNvOwLa5Q0Ae4yB.png)
 
-## Cli usage
+## CLI usage
 
 Install:
 
