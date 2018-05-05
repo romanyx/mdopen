@@ -13,7 +13,7 @@ Allows to view markdown files in the default browser. For more details, see the 
 Install:
 
 ```bash
-go install gopkg.in/romanyx/mdopen.v1/cmd/mdopen
+go get gopkg.in/romanyx/mdopen.v1/cmd/mdopen
 ```
 
 Create a markdown file:
