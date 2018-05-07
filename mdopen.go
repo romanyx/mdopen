@@ -30,14 +30,14 @@ func GithubTemplate() Option {
 // to open default browser. Use New function
 // to initialize corrent one.
 type Opener struct {
-	cmdName string
+	cmdArgs []string
 	layout  *template.Template
 }
 
 // New returns initialized Opener.
 func New(options ...Option) *Opener {
 	opnr := Opener{
-		cmdName: cmdName(),
+		cmdArgs: cmdArgs(),
 		layout:  template.Must(template.New("layout").Parse(github.Template)),
 	}
 
@@ -63,7 +63,11 @@ func (opnr *Opener) Open(f io.Reader) error {
 	}
 
 	url := fmt.Sprintf("file:///%s", tmpfile.Name())
-	cmd := exec.Command(opnr.cmdName, url)
+	args := make([]string, len(opnr.cmdArgs))
+	copy(args, opnr.cmdArgs)
+	args = append(args, url)
+
+	cmd := exec.Command(args[0], args[1:]...)
 	if err := cmd.Run(); err != nil {
 		return errors.Wrap(err, "open letter in the browser failed")
 	}
@@ -99,13 +103,13 @@ func tmpFile() (*os.File, error) {
 	return tmpfile, nil
 }
 
-func cmdName() string {
+func cmdArgs() []string {
 	switch runtime.GOOS {
 	case "darwin":
-		return "open"
+		return []string{"open"}
 	case "windows":
-		return "cmd /c start"
+		return []string{"cmd", "/c", "start"}
 	default:
-		return "xdg-open"
+		return []string{"xdg-open"}
 	}
 }
