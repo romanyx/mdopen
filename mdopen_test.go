@@ -86,7 +86,7 @@ func TestNew(t *testing.T) {
 				options: []Option{},
 			},
 			want: &Opener{
-				cmdName: cmdName(),
+				cmdArgs: cmdArgs(),
 				layout:  template.Must(template.New("layout").Parse(github.Template)),
 			},
 		},
@@ -98,7 +98,7 @@ func TestNew(t *testing.T) {
 				},
 			},
 			want: &Opener{
-				cmdName: cmdName(),
+				cmdArgs: cmdArgs(),
 				layout:  template.Must(template.New("layout").Parse(github.Template)),
 			},
 		},
@@ -120,6 +120,6 @@ func (r *erroredReader) Read(p []byte) (n int, err error) {
 
 func echoCMD() Option {
 	return func(opnr *Opener) {
-		opnr.cmdName = "echo"
+		opnr.cmdArgs = []string{"echo"}
 	}
 }
