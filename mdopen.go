@@ -9,10 +9,10 @@ import (
 	"os/exec"
 	"runtime"
 
+	"github.com/gomarkdown/markdown"
 	"github.com/pkg/errors"
 	"github.com/romanyx/mdopen/internal/templates/github"
 	"github.com/tink-ab/tempfile"
-	blackfriday "gopkg.in/russross/blackfriday.v2"
 )
 
 // Option for initializer.
@@ -84,7 +84,7 @@ func (opnr *Opener) prepareFile(w io.Writer, f io.Reader) error {
 	templateData := struct {
 		Body template.HTML
 	}{
-		Body: template.HTML(blackfriday.Run(data)),
+		Body: template.HTML(markdown.ToHTML(data, nil, nil)),
 	}
 
 	if err := opnr.layout.Execute(w, templateData); err != nil {
