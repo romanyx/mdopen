@@ -10,8 +10,8 @@ import (
 	"runtime"
 
 	"github.com/pkg/errors"
-	"github.com/romanyx/mdopen/internal/templates/github"
 	"github.com/tink-ab/tempfile"
+	"gopkg.in/romanyx/mdopen.v1/internal/templates/github"
 	blackfriday "gopkg.in/russross/blackfriday.v2"
 )
 
